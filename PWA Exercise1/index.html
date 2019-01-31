@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First Exercise ServiceWorker</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>First Exercise ServiceWorker</h1>
+    <p>This is the first exercise in the course PWA1.</p>
+    <p>And now, a picture of a cute kitten:</p>
+    <img src="https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?cs=srgb&dl=adorable-animal-cat-320014.jpg&fm=jpg" alt="Kitten" height="300">
+    <p>And now, some content added via JavaScript:</p>
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator){
+        console.log("ServiceWorker is supported");
+        window.addEventListener('load',() => {
+          navigator.serviceWorker
+          .register('sw.js')
+          .then(reg => console.log('Service Worker : Registered'))
+          .catch(err => console.log(`Service Worker: Error: ${err}`));
+        })
+      }
+      //TODO: Here you should register your serviceworker!
+     
+    </script>
+    
+  </body>
+</html>
